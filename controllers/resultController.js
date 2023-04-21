@@ -9,6 +9,7 @@ exports.getAllResults = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: 'success',
     message: 'All Results found',
+    results: results.length,
     data: {
       results,
     },
@@ -21,6 +22,7 @@ exports.getAllMyResults = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: 'success',
     message: 'All Results found',
+    results: results.length,
     data: {
       results,
     },

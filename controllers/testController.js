@@ -24,6 +24,7 @@ exports.getAllTests = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: 'success',
     message: 'All tests found',
+    results: tests.length,
     data: {
       tests,
     },
@@ -48,12 +49,15 @@ exports.getTest = catchAsync(async (req, res, next) => {
 
 exports.startTest = catchAsync(async (req, res, next) => {
   const test = await Test.findById(req.params.id);
-  const { start, end } = test.duration;
+  const start = test.startTime;
+  const end = test.endTime;
 
   const startTime = parseInt(start.getTime() / 1000, 10);
   const endTime = parseInt(end.getTime() / 1000, 10);
 
   const currentTime = parseInt(Date.now() / 1000, 10);
+
+  console.log(currentTime, startTime, endTime);
 
   if (currentTime < startTime || currentTime >= endTime) {
     let message =
