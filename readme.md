@@ -40,5 +40,5 @@ To use the platform, follow these steps:
 [MIT](https://choosealicense.com/licenses/mit/)
 
 ## Access the Platform
-You can access the platform at https://code-nitrix-frontend.vercel.app/
+You can access the platform at https://code-nitrix-frontend.vercel.app/  
 Sample Test ID: 644241e8904f788f35c8c631
